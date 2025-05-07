@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+
+body {font-family: "Permanent Marker", cursive;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: salmon;
+
+}
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    }
+
+    span {
+        background: url(https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-64.png);
+        /* width: 100px;
+        height:100px; */
+        pointer-events: none;
+        background-size: cover;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: animate 6s linear;
+    }
+    @keyframes animate {
+        0%{
+            transform: translate(-50%, -50%);
+            filter: hue-rotate(0);
+        opacity: 1;
+        }
+        100% {
+            transform: translate(-50% , -5000%);
+            opacity: 0;
+            filter: hue-rotate(720deg);
+
+        }
+    }
+</style>
+<title>UPDATE TEXT</title>
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+
+const careers = ['a youtuber', 'a web developer', 'a freelancer', 'an instructor'];
+
+let careersIndex = 0;
+
+let characterIndex = 0;
+
+updateText();
+function updateText () {
+    characterIndex++
+
+   container.innerHTML = `
+<h1>im ${careers[careersIndex].slice(0,characterIndex)}</h1>
+` 
+
+setTimeout(updateText, 400);
+
+if (characterIndex === careers[careersIndex].length) {
+    careersIndex++;
+    characterIndex = 0;
+};
+if (careersIndex === careers.length) {
+    careersIndex = 0;
+}
+}
+
+
+const bodyEl = document.querySelector('body');
+
+bodyEl.addEventListener("mousemove", (e) => {
+    const spanEl = document.createElement("span");
+    bodyEl.appendChild(spanEl);
+    const size = Math.random()*100;
+
+    spanEl.style.height = size +'px';
+    spanEl.style.width = size +'px';
+    spanEl.style.left = `${e.pageX}px`;
+    spanEl.style.top = `${e.pageY}px`;
+
+    setTimeout(() => {
+        spanEl.remove();
+    }, 3000)
+})
+
+
+    </script>
+</body>
+</html>

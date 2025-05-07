@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: slateblue;
+    font-family: cursive;
+}
+
+.container {
+    background-color: #fff;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    }
+
+    .month-name {
+        margin: 0;
+        background-color: orangered;
+        padding: 10px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .day-name {
+        color: darkgray;
+        font-size: 15px;
+
+    }
+    .day-num {
+        margin: 0;
+        font-size: 88px;
+        font-weight: bold;
+
+    }
+
+    
+    .year {
+        margin: 20px 0;
+        color: darkgray;
+        font-size: 15px;
+            font-weight: 500;
+        }
